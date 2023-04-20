@@ -36,10 +36,16 @@ app.post("/add", (req, res) => {
     let post = { name:"" ,email:"", role:"" , address:"" };
   
     let sql = "INSERT INTO employee SET ?";
-  post.name=req.body.name;
-  post.email=req.body.email;
-  post.role=req.body.role;
-  post.address=req.body.address;
+    post=req.body;
+//   post.name=req.body.name;
+//   post.email=req.body.email;
+//   post.role=req.body.role;
+//   post.address=req.body.address;
+
+//cheak employee already present
+
+
+
     let query = db.query(sql, post, (err) => {
   
       if (err) {
